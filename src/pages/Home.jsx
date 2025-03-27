@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import '../styles/App.css'
+import '../styles/Home.scss'
 
 function Home() {
   return (
     <>
-    <div>
-      <h1>Mon appli</h1>
+      <div>
+        <div id="hero">
+          <p>Chez vous, partout et ailleurs</p>
+          <img src="..\src\assets\hero.webp" alt="" />
+        </div>
 
-    </div>
+      </div>
     </>
   )
 }

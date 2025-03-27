@@ -8,6 +8,7 @@ import NotFound from "../pages/NotFound"; // Pour gérer les erreurs 404
 function AppRouter() {
   return (
     <Router>
+      <h1>un titre hihi</h1>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />

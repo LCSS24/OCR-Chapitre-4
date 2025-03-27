@@ -1,21 +1,25 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
-import Home from './pages/Home.jsx'
 import AppRouter from './utils/Router.jsx'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Logement from "./pages/Logement";
+import NotFound from "./pages/NotFound"; // Pour gérer les erreurs 404
+import Header from "./components/Header/Header.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <header>
-      <img src="\src\assets\LOGO.jpg" alt="" />
-      <nav>
-        <ul>
-          <li>Accueil</li>
-          <li>A propos</li>
-        </ul>
-      </nav>
-    </header>
-    <Home></Home>
-    <AppRouter></AppRouter>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/logement" element={<Logement />} />
+        <Route path="*" element={<NotFound />} /> {/* Gère les pages non existantes */}
+      </Routes>
+    </Router>
   </StrictMode>,
 )

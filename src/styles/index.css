@@ -8,18 +8,3 @@ body {
   background-color: #FFFFFF;
   margin: 0 100px;
 }
-
-header {
-  margin-top: 50px;
-  display:  flex;
-  justify-content: space-between;
-  nav {
-    ul {
-      display: flex;
-      gap: 50px;
-      li {
-        list-style-type: none;
-      }
-    }
-  }
-}
