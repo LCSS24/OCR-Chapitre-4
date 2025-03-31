@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/logement" element={<Logement />} />
+        <Route path="/logements/:id" element={<Logement />} />
         <Route path="*" element={<NotFound />} /> {/* Gère les pages non existantes */}
       </Routes>
       <Footer />

@@ -1,21 +1,15 @@
 import { useState } from 'react'
 import '../styles/Home.scss'
-import logements from "../utils/logements.json"
+import Logements from "../utils/logements.json"
+import Banner from '../components/Banner'
+import Card from '../components/Card'
 
 function Home() {
   return (
     <>
-      <div id="hero">
-        <p>Chez vous, partout et ailleurs</p>
-        <img src="..\src\assets\hero.webp" alt="" />
-      </div>
+      <Banner img="..\src\assets\hero.webp" title="Chez vous, partout et ailleurs" />
       <section id="gallery">
-        {logements.map((e, index) => (
-          <figure key={index}>
-            <div id="layer"></div>
-            <img src={e.cover} alt="" />
-            <figcaption>{e.title}</figcaption></figure>
-        ))}
+        <Card logements={Logements} />
       </section>
 
     </>
