@@ -26,12 +26,15 @@ function Logement() {
                         <p>{logement.host.name}</p>
                         <img src={logement.host.picture} alt="" />
                     </div>
-                    <div className="rating">
-                        {/* Faire le systeme de rating
-                        for (i=0, i < 5, i++) {
-                            console.log("oui")
-                        } */}
-                    </div>
+                    {/* <div className="rating">
+                        {[...Array(5)].map((_, i) => (
+                            // <img
+                            //     key={i}
+                            //     src={i < rating ? "src/assets/starcolor.svg" : "src/assets/starsgris.svg"}
+                            //     alt="star"
+                            // />
+                        ))}
+                    </div> */}
                 </div>
             </section>
             <div className="collapses_logement">
