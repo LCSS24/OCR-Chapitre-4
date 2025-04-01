@@ -4,7 +4,9 @@ import "./Header.scss"
 function Header() {
     return (
         <header>
-            <img src="\src\assets\LOGO.svg" alt="" />
+            <Link to={"/"}>
+                <img src="\src\assets\LOGO.svg" alt="" />
+            </Link>
             <nav>
                 <Link to={"/"}>Accueil</Link>
                 <Link to={"/About"}>A propos</Link>
