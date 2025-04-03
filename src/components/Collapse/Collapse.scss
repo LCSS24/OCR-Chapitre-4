@@ -37,14 +37,17 @@
         max-height: 0;
         overflow: hidden;
         border-radius: 0 0 10px 10px;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.3s ease-in-out;
 
-        p {
+        p,
+        ul {
+
             padding: 20px;
         }
+
     }
 
-    .pascontent {
-        max-height: 200px;
+    .open {
+        max-height: 100%;
     }
 }

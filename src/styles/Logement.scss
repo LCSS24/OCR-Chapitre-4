@@ -83,17 +83,28 @@ main {
 
         .second {
             display: flex;
-            align-items: flex-start;
-            width: 180px;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 160px;
+            gap: 10px;
+
+            .rating {
+                display: flex;
+                justify-content: end;
+                gap: 8px;
+
+                img {
+                    width: 22px;
+                }
+            }
 
             .profil {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
-
                 text-align: end;
-                gap: 15px;
+                gap: 10px;
 
                 img {
                     height: 70px;

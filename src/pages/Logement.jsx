@@ -7,7 +7,16 @@ import Collapse from "../components/Collapse/Collapse"
 function Logement() {
     const { id } = useParams();
     const logement = Logements.find(i => i.id === id)
-    console.log(logement, id);
+    let stars = []
+
+    for (let i = 0; i < logement.rating; i++) {
+        stars.push(<img key={i} src="/src/assets/starscolor.svg" alt="étoile rouge" />);
+    }
+
+    while (stars.length < 5) {
+        stars.push(<img key={`gris-${stars.length}`} src="/src/assets/starsgris.svg" alt="étoile grise" />);
+    }
+
     return (
         <main>
             <Carousel obj={logement} />
@@ -17,7 +26,7 @@ function Logement() {
                     <p>{logement.location}</p>
                     <div className="tag">
                         {logement.tags.map((e) => (
-                            <span key={Math.random(0)}>{e}</span>
+                            <span key={e}>{e}</span>
                         ))}
                     </div>
                 </div>
@@ -26,25 +35,19 @@ function Logement() {
                         <p>{logement.host.name}</p>
                         <img src={logement.host.picture} alt="" />
                     </div>
-                    {/* <div className="rating">
-                        {[...Array(5)].map((_, i) => (
-                            // <img
-                            //     key={i}
-                            //     src={i < rating ? "src/assets/starcolor.svg" : "src/assets/starsgris.svg"}
-                            //     alt="star"
-                            // />
-                        ))}
-                    </div> */}
+                    <div className="rating">
+                        {stars}
+                    </div>
                 </div>
             </section>
             <div className="collapses_logement">
                 <Collapse title="Description" content={logement.description} />
                 <Collapse title="Equipements" content={
-                    <ul>
+                    <>
                         {logement.equipments.map((e) => (
-                            <li>{e}</li>
+                            <li key={Math.random(0)}>{e}</li>
                         ))}
-                    </ul>
+                    </>
                 } />
             </div>
         </main>

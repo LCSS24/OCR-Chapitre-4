@@ -10,8 +10,8 @@ function Collapse({ title, content }) {
                 <h2>{title}</h2>
                 <img onClick={() => setIsOpen(!isOpen)} src="..\src\assets\Vector.svg" alt="" className={isOpen ? "rotated" : ""} />
             </div>
-            <div className={isOpen ? "content" : "content pascontent"}>
-                <p className="text">{content}</p>
+            <div className={isOpen ? "content" : "content open"}>
+                {typeof content === "string" ? <p className="text">{content}</p> : <ul>{content}</ul>}
             </div>
         </article>
     )
