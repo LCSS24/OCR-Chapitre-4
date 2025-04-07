@@ -37,7 +37,7 @@
         max-height: 0;
         overflow: hidden;
         border-radius: 0 0 10px 10px;
-        transition: max-height 0.3s ease-in-out;
+        transition: max-height 0.5s ease-in-out !important;
 
         p,
         ul {
@@ -48,6 +48,13 @@
     }
 
     .open {
-        max-height: 100%;
+        max-height: 1000px;
+    }
+}
+
+@media (max-width: 425px) {
+    .collapse {
+        width: 100%;
+
     }
 }

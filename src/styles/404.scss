@@ -22,3 +22,12 @@ main {
         color: black;
     }
 }
+
+@media (max-width: 425px) {
+    main {
+
+        h1 {
+            font-size: 8rem;
+        }
+    }
+}

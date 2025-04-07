@@ -25,3 +25,26 @@ header {
         }
     }
 }
+
+@media (max-width: 425px) {
+    header {
+        a {
+            display: flex;
+
+        }
+
+        img {
+            width: 145px;
+        }
+
+        nav {
+            gap: 25px;
+
+            a {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+}

@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Logements from "../utils/logements.json"
 import "../styles/Logement.scss"
 import Carousel from "../components/Carousel";
@@ -6,7 +7,17 @@ import Collapse from "../components/Collapse/Collapse"
 
 function Logement() {
     const { id } = useParams();
-    const logement = Logements.find(i => i.id === id)
+    const navigate = useNavigate();
+    const logement = Logements.find(i => i.id === id);
+
+    useEffect(() => {
+        if (!logement) {
+            navigate("/404", { replace: true }); // Redirige vers NotFound
+        }
+    }, [logement, navigate]);
+
+    if (!logement) return null; // Évite le rendu si redirection en cours
+
     let stars = []
 
     for (let i = 0; i < logement.rating; i++) {
