@@ -52,9 +52,20 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 700px) {
     .collapse {
         width: 100%;
 
+        .bar {
+            height: 20px;
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            img {
+                width: 20px;
+            }
+        }
     }
 }

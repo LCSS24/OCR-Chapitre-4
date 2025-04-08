@@ -11,6 +11,7 @@ function Logement() {
     const logement = Logements.find(i => i.id === id);
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         if (!logement) {
             navigate("/404", { replace: true }); // Redirige vers NotFound
         }
