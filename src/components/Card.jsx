@@ -1,21 +1,15 @@
 import { Link } from "react-router-dom";
 
+function Card({ id, cover, title }) {
 
-function Card({ logements }) {
     return (
-        <>
-            {
-                logements.map((e) => (
-                    <Link key={e.id} to={`/logements/${e.id}`}>
-                        <figure>
-                            <div id="layer"></div>
-                            <img src={e.cover} alt="" />
-                            <figcaption>{e.title}</figcaption>
-                        </figure >
-                    </Link>
-                ))
-            }
-        </>
+        <Link to={`/logements/${id}`}>
+            <figure>
+                <div id="layer"></div>
+                <img src={cover} alt="" />
+                <figcaption>{title}</figcaption>
+            </figure >
+        </Link>
     )
 }
 
